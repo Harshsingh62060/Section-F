@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .profile-pic {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.3s;
+    }
+    .profile-pic:hover {
+      transform: scale(1.1);
+    }
+    h2 {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .bio {
+      text-align: center;
+      margin: 15px 0;
+    }
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .hidden {
+      display: none;
+    }
+    /* Dark mode */
+    .dark-mode {
+      background: #222;
+      color: #ddd;
+    }
+    .dark-mode .container {
+      background: #333;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Profile</h1>
+  </header>
+  <div class="container">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+    <h2>Harsh Singh</h2>
+    <p class="bio">Aspiring AI/ML Engineer | Fitness Enthusiast | Learner</p>
+    
+    <button onclick="toggleDetails()">Show More About Me</button>
+    <div id="details" class="hidden">
+      <p><strong>Education:</strong> BTech in Computer Science (AI/ML)</p>
+      <p><strong>Interests:</strong> Web Development, Data Science, Cybersecurity</p>
+      <p><strong>Hobbies:</strong> Gym, Coding, Exploring Tech</p>
+    </div>
+    
+    <button onclick="toggleTheme()">Toggle Dark Mode</button>
+  </div>
+
+  <script>
+    function toggleDetails() {
+      const details = document.getElementById("details");
+      details.classList.toggle("hidden");
+    }
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
